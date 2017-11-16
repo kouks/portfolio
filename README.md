@@ -1,2 +1,1 @@
-# Vue Frontend Skeleton
-> Pavel Koch
+# Personal Portfolio
