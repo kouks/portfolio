@@ -16,7 +16,7 @@ script:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: rsync -e "ssh -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/dist/build.js
+  script: rsync -e "ssh -i deploy_rsa -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/dist/build.js
     root@46.101.45.168:/var/www/html/js
   on:
     branch: master
