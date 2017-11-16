@@ -5,6 +5,7 @@ sudo: false
 before_install:
 - openssl aes-256-cbc -K $encrypted_90794547a8aa_key -iv $encrypted_90794547a8aa_iv
   -in deploy_rsa.enc -out deploy_rsa -d
+- chmod 700 deploy_rsa
 
 install:
 - travis_retry npm install
