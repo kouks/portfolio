@@ -2,6 +2,10 @@ language: javascript
 
 sudo: false
 
+before_install:
+- openssl aes-256-cbc -K $encrypted_90794547a8aa_key -iv $encrypted_90794547a8aa_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
+
 install:
 - travis_retry npm install
 
@@ -12,10 +16,6 @@ script:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: rsync $TRAVIS_BUILD_DIR/dist/build.js root@46.101.45.168:/var/www/html/js
+  script: rsync -e "ssh -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/dist/build.js root@46.101.45.168:/var/www/html/js
   on:
     branch: master
-
-before_install:
-- openssl aes-256-cbc -K $encrypted_90794547a8aa_key -iv $encrypted_90794547a8aa_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
