@@ -1,0 +1,38 @@
+
+$family-sans-serif: 'Josefin Sans';
+$primary: #5f4d93;
+$secondary: #e37682;
+$green: #4CAF50;
+$red: #FF5722;
+
+$section-padding-large: 11em 1.5em;
+
+$footer-background-color: white;
+
+
+.m {
+  &t {
+    &-1 { margin-top: 20px; }
+    &-2 { margin-top: 40px; }
+    &-3 { margin-top: 60px; }
+    &-5 { margin-top: 100px; }
+  }
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+em {
+  color: $secondary;
+}
+
+.content p {
+  line-height: 1.7;
+}
