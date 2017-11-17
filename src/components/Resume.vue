@@ -14,20 +14,9 @@
             </div>
           </div>
 
-          <ul class="headline-links mt-3">
-            <li><a target="_blank" href="https://www.linkedin.com/in/pavel-koch-25518b129/">
-              <i class="fa fa-linkedin fa-fw" aria-hidden="true"></i>
-            </a></li>
-            <li><a target="_blank" href="http://github.com/kouks">
-              <i class="fa fa-github fa-fw" aria-hidden="true"></i>
-            </a></li>
-            <li><a target="_blank" href="https://www.facebook.com/pavel.k.koch">
-              <i class="fa fa-facebook-f fa-fw" aria-hidden="true"></i>
-            </a></li>
-            <li><a target="_blank" href="https://www.instagram.com/kouks.koch/">
-              <i class="fa fa-instagram fa-fw" aria-hidden="true"></i>
-            </a></li>
-          </ul>
+          <div class="headline-links mt-3">
+            <social-links></social-links>
+          </div>
 
           <div class="headline-actions mt-3">
             <router-link class="action is-secondary has-icon" to="/">
@@ -225,7 +214,9 @@
 </template>
 
 <script>
+import SocialLinks from '@/components/partials/Social'
+
 export default {
-  //
+  components: { SocialLinks }
 }
 </script>
