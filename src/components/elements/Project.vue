@@ -1,11 +1,20 @@
 <template>
   <div :class="['column', featuredWidth]">
     <article :class="['project', featuredClass]" :style="{ backgroundColor: project.color }">
-      <div class="project-description">
-        <div class="project-description-text">
-          <h3 class="title is-4">{{ project.name }}</h3>
-          <p>{{ project.description }}</p>
+      <div class="project-thumbnail">
+        <div class="img">
+          <img :src="project.picture" :alt="project.name">
         </div>
+      </div>
+
+      <div class="project-description has-text-centered has-text-light">
+        <span class="is-uppercase has-text-weight-bold">{{ project.name }}</span>
+        <p>
+          <a class="has-text-light" target="_blank" :href="project.git">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+        </p>
+        <p>{{ project.description }}</p>
       </div>
     </article>
   </div>
@@ -37,46 +46,50 @@ export default {
  *
  * .project
  * .project.is-featured
- *  .project-description
- *    .project-description-text
+ *   .project-thumbnail
+ *   .project-description
+ *     .project-description-text
  */
 
 article.project {
-  cursor: pointer;
   height: 0;
+  overflow: hidden;
   padding-bottom: 100%;
   position: relative;
   transition: .5s all ease;
 
   @media screen and (min-width: $tablet) {
     &.is-featured {
-      padding-bottom: 50%;
+      padding-bottom: 0;
+      height: auto;
+
+      .project-description {
+        position: relative;
+      }
     }
   }
 
-  &:hover > .project-description {
-    opacity: 1;
+  .project-thumbnail {
+    padding: 10% 10% 0;
+
+    .img {
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+      line-height: 0;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.5);
+    z-index: 100;
   }
 
   .project-description {
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.5);
-    height: 100%;
-    opacity: 0;
+    width: 100%;
+    bottom: 0;
     padding: 35px;
     position: absolute;
-    transition: .5s all ease;
-    width: 100%;
-    z-index: 100;
-
-    &-text {
-      position: relative;
-      top: 60%;
-
-      * {
-        color: $grey-lighter;
-      }
-    }
   }
 }
 </style>
