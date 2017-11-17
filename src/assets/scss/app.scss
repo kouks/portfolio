@@ -47,6 +47,7 @@ a.action, button.action {
   &.is-disabled {
     background: $light;
     color: $grey-light;
+    cursor: not-allowed;
   }
 
   &:not(.is-disabled) {
@@ -149,6 +150,7 @@ form.form {
 
       &:disabled {
         background: $light;
+        cursor: not-allowed;
       }
 
       &:not(:disabled) {
