@@ -38,7 +38,7 @@ img {
 
 a.action, button.action {
   background: transparent;
-  border-radius: 26.5px;
+  border-radius: 26px;
   border: 1px solid $grey-lighter;
   color: $grey;
   cursor: pointer;
@@ -47,10 +47,11 @@ a.action, button.action {
   outline: none;
   padding: 15px 35px;
   transition: .2s all ease;
-  line-height: 1;
+  display: inline-block;
+  line-height: $size-5;
 
   &.has-icon {
-    padding: 15px;
+    padding: 13.75px 21.5px;
   }
 
   &:not(:last-child) {

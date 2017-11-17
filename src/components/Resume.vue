@@ -31,7 +31,7 @@
 
           <div class="headline-actions mt-3">
             <router-link class="action is-secondary has-icon" to="/">
-              <i class="fa fa-angle-left fa-fw" aria-hidden="true"></i>
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
             </router-link>
             <button class="action is-primary">Download</button>
           </div>

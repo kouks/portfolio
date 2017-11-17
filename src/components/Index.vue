@@ -31,7 +31,7 @@
 
           <div class="headline-actions mt-3">
             <router-link class="action is-primary" to="/resume">Résumé</router-link>
-            <button class="action is-secondary" @click="modalActive = true">Contact</button>
+            <router-link class="action is-secondary" to="/contact">Contact</router-link>
           </div>
         </div>
       </div>
@@ -62,25 +62,18 @@
         </div>
       </div>
     </footer>
-
-    <contact-modal
-      :active="modalActive"
-      @close="modalActive = false"
-    />
   </div>
 </template>
 
 <script>
 import Project from './Project'
-import ContactModal from './Contact'
 import Projects from '@/containers/Projects'
 
 export default {
-  components: { ContactModal, Project },
+  components: { Project },
 
   data () {
     return {
-      modalActive: false,
       projects: Projects
     }
   }
