@@ -9,7 +9,7 @@
 
       <div class="project-description has-text-centered has-text-light">
         <span class="is-uppercase has-text-weight-bold">{{ project.name }}</span>
-        <p>
+        <p v-show="project.git">
           <a class="has-text-light" target="_blank" :href="project.git">
             <i class="fa fa-github" aria-hidden="true"></i>
           </a>

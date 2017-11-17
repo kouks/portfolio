@@ -41,7 +41,7 @@
                 </div>
                 <div class="column is-7 is-offset-1">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti quae, a alias nostrum iure natus enim accusamus quos quasi labore, magnam ut quis libero! Laborum nemo, commodi quo.
+                    Applied for a junior role but was soon promoted to a senior developer. My main concern was maintaining clients' websites, mostly written in&nbsp;WP. Was however contributing to multiple Laravel projects, too.
                   </p>
                 </div>
 
@@ -54,20 +54,7 @@
                 </div>
                 <div class="column is-7 is-offset-1">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti quae, a alias nostrum iure natus enim accusamus quos quasi labore, magnam ut quis libero! Laborum nemo, commodi quo.
-                  </p>
-                </div>
-
-                <div class="column is-4">
-                  <p>
-                    <strong>Freelance Work</strong><br>
-                    <em>Me, Myself &amp; I</em><br>
-                    Whenever I Feel Like It
-                  </p>
-                </div>
-                <div class="column is-7 is-offset-1">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti quae, a alias nostrum iure natus enim accusamus quos quasi labore, magnam ut quis libero! Laborum nemo, commodi quo.
+                    First serious employment in the field. Was assigned to maintain a huge e-shop backend based on Zend Framework. Got really familiar with objects not only in PHP but in general.
                   </p>
                 </div>
               </div>
@@ -149,7 +136,7 @@
                       <p>
                         <strong>Programming</strong><br>
                         JavaScript <em>Vue.js, React, node.js</em><br>
-                        PHP <em>Laravel, Symfony</em><br>
+                        PHP <em>Laravel, Symfony, WordPress</em><br>
                         HTML &amp; CSS<br>
                         Java<br>
                         C<br>
