@@ -5,7 +5,7 @@
         <headline-title>
           <h1 class="title is-2">Say Hello.</h1>
           <span class="subtitle is-4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illo voluptatem dolore a.
+            Feel free to ask me anything you want. Be it a new project proposal or a friendly chit-chat.
           </span>
         </headline-title>
 
