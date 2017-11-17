@@ -17,7 +17,12 @@
           <router-link class="action is-secondary has-icon" to="/">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
           </router-link>
-          <button class="action is-primary is-disabled">Download</button>
+
+          <a
+            href="https://pavelkoch.io/files/Pavel-Koch-Resume-2017.pdf"
+            target="_blank"
+            class="action is-primary"
+          >Download</a>
         </headline-actions>
       </headline>
     </section>
@@ -105,7 +110,7 @@
                     Became a Student Voice Leader for the first year of my studies at the university.<br>
                   </p>
                   <p>
-                    <em>Web Development Society Lerader</em><br>
+                    <em>Web Development Society Leader</em><br>
                     <small>September 2016&mdash;June 2017</small><br>
                     Founded and led this small group of web development enthusiasts.
                   </p>
