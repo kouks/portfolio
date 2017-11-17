@@ -17,7 +17,7 @@
           <router-link class="action is-secondary has-icon" to="/">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
           </router-link>
-          <button class="action is-primary is-diabled">Download</button>
+          <button class="action is-primary is-disabled">Download</button>
         </headline-actions>
       </headline>
     </section>
