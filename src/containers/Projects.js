@@ -10,7 +10,7 @@ export default [
   {
     name: 'Implicit View',
     description: 'Implicit research tool for a British company, Laravel backend.',
-    color: '#40BE33',
+    color: '#4CAF50',
     picture: 'https://pavelkoch.io/img/iv.png',
     git: false,
     featured: false
