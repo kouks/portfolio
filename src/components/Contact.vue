@@ -1,48 +1,80 @@
 <template>
   <div>
     <section class="section is-large">
-      <div class="container has-text-centered">
-        <div class="headline">
-          <div class="headline-title">
-            <div class="columns">
-              <div class="column is-12-tablet is-6-desktop is-offset-3-desktop">
-                <h1 class="title is-2">Say Hello.</h1>
-                <span class="subtitle is-4">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illo voluptatem dolore a.
-                </span>
-              </div>
-            </div>
-          </div>
+      <headline>
+        <headline-title>
+          <h1 class="title is-2">Say Hello.</h1>
+          <span class="subtitle is-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illo voluptatem dolore a.
+          </span>
+        </headline-title>
 
-          <div class="headline-links mt-3">
-            <social-links></social-links>
-          </div>
+        <headline-links>
+          <social-links></social-links>
+        </headline-links>
 
-          <div class="headline-actions mt-3">
-            <router-link class="action is-secondary has-icon" to="/">
-              <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </router-link>
-            <a href="mailto:kouks.koch@gmail.com" class="action is-primary">Email Me</a>
-          </div>
-        </div>
-      </div>
+        <headline-actions>
+          <router-link class="action is-secondary has-icon" to="/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </router-link>
+          <a href="mailto:kouks.koch@gmail.com" class="action is-primary">Email Me</a>
+        </headline-actions>
+      </headline>
     </section>
 
-    <section class="section">
+    <main class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-12-tablet is-8-desktop is-offset-2-desktop">
-            <div class="columns is-gapless is-multiline">
-              <project
-                :project="project"
-                :key="project.name"
-                v-for="project in projects"
-              />
+          <div class="column is-5">
+            <form class="form">
+              <div class="form-field">
+                <div class="form-field has-addons">
+                  <span class="form-addon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                  <input :class="[ true ? '' : 'has-errors']" type="text" v-model="form.email" disabled>
+                </div>
+
+                <span v-show="false" class="form-message has-text-danger">
+                  <i class="fa fa-warning" aria-hidden="true"></i> Your email seems to be invalid
+                </span>
+              </div>
+
+              <div class="form-field">
+                <textarea
+                  :class="[ true ? '' : 'has-errors']"
+                  v-model="form.message"
+                  placeholder="Message"
+                  disabled
+                ></textarea>
+
+                <span v-show="false" class="form-message has-text-danger">
+                  <i class="fa fa-warning" aria-hidden="true"></i> The message needs to be at least 10 characters long
+                </span>
+              </div>
+
+              <div class="form-field">
+                <button type="button" class="action is-primary is-fullwidth is-disabled">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="column is-5 is-offset-1">
+            <div class="content">
+              <dl class="data-list">
+                  <dt>Phone</dt>
+                  <dd>+44&nbsp;7543&nbsp;554&nbsp;198&nbsp;<em>UK</em></dd>
+                  <dd>+420&nbsp;720&nbsp;468&nbsp;227&nbsp;<em>CZ</em></dd>
+                  <dt>Email</dt>
+                  <dd><a href="mailto:kouks.koch@gmail.com">kouks.koch@gmail.com</a></dd>
+              </dl>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <footer class="footer">
       <div class="container">
@@ -57,10 +89,26 @@
 </template>
 
 <script>
+import Headline from '@/components/elements/Headline'
 import SocialLinks from '@/components/partials/Social'
+import HeadlineTitle from '@/components/elements/HeadlineTitle'
+import HeadlineLinks from '@/components/elements/HeadlineLinks'
+import HeadlineActions from '@/components/elements/HeadlineActions'
 
 export default {
-  components: { SocialLinks },
+  components: {
+    Headline,
+    SocialLinks,
+    HeadlineTitle,
+    HeadlineLinks,
+    HeadlineActions
+  },
+
+  data () {
+    return {
+      form: {}
+    }
+  },
 
   computed: {
     emailValid () {

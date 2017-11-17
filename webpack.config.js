@@ -44,14 +44,6 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [basePath('src')]
-      },
-      {
-        test: /\.png$/i,
-        loaders: [
-          'file-loader',
-          'image-webpack-loader'
-        ],
-        include: [basePath('src')],
       }
     ]
   }

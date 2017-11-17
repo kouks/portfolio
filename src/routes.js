@@ -1,6 +1,7 @@
 import Index from '@/components/Index'
 import Resume from '@/components/Resume'
 import Contact from '@/components/Contact'
+import FourOhFour from '@/components/FourOhFour'
 
 export default [
   {
@@ -17,5 +18,9 @@ export default [
     path: '/contact',
     component: Contact,
     name: 'contact'
+  },
+  {
+    path: '/*',
+    component: FourOhFour
   }
 ]

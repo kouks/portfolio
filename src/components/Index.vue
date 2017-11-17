@@ -1,32 +1,26 @@
 <template>
   <div>
     <section class="section is-large">
-      <div class="container has-text-centered">
-        <div class="headline">
-          <div class="headline-title">
-            <div class="columns">
-              <div class="column is-12-tablet is-6-desktop is-offset-3-desktop">
-                <h1 class="title is-2">Hi.</h1>
-                <span class="subtitle is-4">
-                  Name's Pavel. I'm an enthusiastic programmer, amateur chess player and a gym freak.
-                </span>
-              </div>
-            </div>
-          </div>
+      <headline>
+        <headline-title>
+          <h1 class="title is-2">Hi.</h1>
+          <span class="subtitle is-4">
+            Name's Pavel. I'm an enthusiastic programmer, amateur chess player and a gym freak.
+          </span>
+        </headline-title>
 
-          <div class="headline-links mt-3">
-            <social-links></social-links>
-          </div>
+        <headline-links>
+          <social-links></social-links>
+        </headline-links>
 
-          <div class="headline-actions mt-3">
-            <router-link class="action is-primary" to="/resume">Résumé</router-link>
-            <router-link class="action is-secondary" to="/contact">Contact</router-link>
-          </div>
-        </div>
-      </div>
+        <headline-actions>
+          <router-link class="action is-primary" to="/resume">Résumé</router-link>
+          <router-link class="action is-secondary" to="/contact">Contact</router-link>
+        </headline-actions>
+      </headline>
     </section>
 
-    <section class="section">
+    <main class="section">
       <div class="container">
         <div class="columns">
           <div class="column is-12-tablet is-8-desktop is-offset-2-desktop">
@@ -40,7 +34,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <footer class="footer">
       <div class="container">
@@ -55,12 +49,23 @@
 </template>
 
 <script>
-import Project from './Project'
 import Projects from '@/containers/Projects'
+import Project from '@/components/elements/Project'
+import Headline from '@/components/elements/Headline'
 import SocialLinks from '@/components/partials/Social'
+import HeadlineTitle from '@/components/elements/HeadlineTitle'
+import HeadlineLinks from '@/components/elements/HeadlineLinks'
+import HeadlineActions from '@/components/elements/HeadlineActions'
 
 export default {
-  components: { Project, SocialLinks },
+  components: {
+    Project,
+    Headline,
+    SocialLinks,
+    HeadlineTitle,
+    HeadlineLinks,
+    HeadlineActions
+  },
 
   data () {
     return {

@@ -1,36 +1,30 @@
 <template>
   <div>
     <section class="section is-large">
-      <div class="container has-text-centered">
-        <div class="headline">
-          <div class="headline-title">
-            <div class="columns">
-              <div class="column is-12-tablet is-6-desktop is-offset-3-desktop">
-                <h1 class="title is-2">The Résumé.</h1>
-                <span class="subtitle is-4">
-                  I'm always eager to learn new things and deal with challenges that are put in front of me.
-                </span>
-              </div>
-            </div>
-          </div>
+      <headline>
+        <headline-title>
+          <h1 class="title is-2">The Résumé.</h1>
+          <span class="subtitle is-4">
+            I'm always eager to learn new things and deal with challenges that are put in front of me.
+          </span>
+        </headline-title>
 
-          <div class="headline-links mt-3">
-            <social-links></social-links>
-          </div>
+        <headline-links>
+          <social-links></social-links>
+        </headline-links>
 
-          <div class="headline-actions mt-3">
-            <router-link class="action is-secondary has-icon" to="/">
-              <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </router-link>
-            <button class="action is-primary">Download</button>
-          </div>
-        </div>
-      </div>
+        <headline-actions>
+          <router-link class="action is-secondary has-icon" to="/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </router-link>
+          <button class="action is-primary">Download</button>
+        </headline-actions>
+      </headline>
     </section>
 
-    <section class="section">
+    <main class="section">
       <div class="container">
-        <div class="content has-text-justified has-text-grey-dark">
+        <div class="content has-text-justified">
           <div class="columns is-multiline">
             <div class="column is-12-tablet is-8-desktop is-offset-2-desktop">
               <div class="columns is-multiline">
@@ -199,7 +193,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <footer class="footer">
       <div class="container">
@@ -214,9 +208,19 @@
 </template>
 
 <script>
+import Headline from '@/components/elements/Headline'
 import SocialLinks from '@/components/partials/Social'
+import HeadlineTitle from '@/components/elements/HeadlineTitle'
+import HeadlineLinks from '@/components/elements/HeadlineLinks'
+import HeadlineActions from '@/components/elements/HeadlineActions'
 
 export default {
-  components: { SocialLinks }
+  components: {
+    Headline,
+    SocialLinks,
+    HeadlineTitle,
+    HeadlineLinks,
+    HeadlineActions
+  }
 }
 </script>
