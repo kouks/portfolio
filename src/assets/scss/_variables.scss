@@ -1,14 +1,17 @@
 
-$family-sans-serif: 'Josefin Sans';
+// Base variables redefinitions
+$family-sans-serif: 'Josefin Sans', sans-serif;
 $primary: #5f4d93;
 $secondary: #e37682;
+$tertiary: #1976D2;
 $green: #4CAF50;
-$red: #FF5722;
+$red: #D32F2F;
 
 $section-padding-large: 11em 1.5em;
 
 $footer-background-color: white;
 
+// Margin helpers
 
 .m {
   &t {
@@ -19,20 +22,8 @@ $footer-background-color: white;
   }
 }
 
-button::-moz-focus-inner {
-  border: 0;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-  max-height: 300px;
-}
-
-em {
-  color: $secondary;
-}
-
-.content p {
-  line-height: 1.7;
+// Removing ugly dotted border around buttons and a tags in firefox
+button::-moz-focus-inner, a::-moz-focus-inner, input::-moz-focus-inner {
+  border: none;
+  outline: none;
 }

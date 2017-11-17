@@ -1,0 +1,21 @@
+
+.content {
+  p {
+    line-height: 1.7;
+  }
+
+  em {
+    color: $secondary;
+  }
+
+  a {
+    color: $secondary;
+    border-bottom: 1px dotted $grey-light;
+
+    &:hover {
+      color: $secondary;
+      border-color: transparent;
+    }
+  }
+}
+
