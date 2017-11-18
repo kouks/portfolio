@@ -74,7 +74,6 @@ article.project {
 
     .img {
       overflow: hidden;
-      border-radius: 5px;
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
       line-height: 0;
     }
