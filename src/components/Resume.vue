@@ -14,7 +14,7 @@
         </headline-links>
 
         <headline-actions>
-          <router-link class="action is-secondary has-icon" to="/">
+          <router-link class="action is-default has-icon" to="/">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
           </router-link>
 

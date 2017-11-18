@@ -3,8 +3,6 @@
 @import 'node_modules/bulma/bulma';
 @import 'typography';
 
-// box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
-
 /**
  * Generic action buttons.
  *
@@ -22,12 +20,11 @@
 
 a.action, button.action {
   background: transparent;
-  border-radius: 26px;
-  border: 1px solid $grey-lighter;
+  border-radius: 2px;
+  border: 1px solid transparent;
   color: $grey;
   display: inline-block;
   font-size: $size-5;
-  height: auto;
   line-height: $size-5;
   outline: none;
   padding: 15px 35px;
@@ -38,7 +35,7 @@ a.action, button.action {
   }
 
   &:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 30px;
   }
 
   &.is-fullwidth {
@@ -48,34 +45,38 @@ a.action, button.action {
 
   &.is-disabled {
     background: $light;
+    border-color: $grey-lighter;
     color: $grey-light;
     cursor: not-allowed;
   }
 
-  &:not(.is-disabled) {
-    cursor: pointer;
+  &.is-default {
+    background: white;
+    border-color: $grey-lighter;
+    color: $grey;
+  }
 
-    &.is-primary:hover, &.is-primary.is-filled {
-      background: $primary;
-      border-color: $primary;
-      color: $white;
-    }
+  &.is-primary {
+    background: $primary;
+    border-color: $primary;
+    color: $light;
+  }
 
-    &.is-secondary:hover, &.is-secondary.is-filled {
-      background: $secondary;
-      border-color: $secondary;
-      color: $white;
-    }
+  &.is-secondary {
+    background: $secondary;
+    border-color: $secondary;
+    color: $light;
+  }
 
-    &.is-tertiary:hover, &.is-tertiary.is-filled {
-      background: $tertiary;
-      border-color: $tertiary;
-      color: $white;
-    }
+  &.is-tertiary {
+    background: $tertiary;
+    border-color: $tertiary;
+    color: $light;
+  }
 
-    &:active {
-      border-color: transparent;
-      box-shadow: 0 0 0 0.125em $grey-lighter;
+  &.is-secondary, &.is-primary, &.is-default {
+    &:hover, &:focus  {
+      box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
     }
   }
 }
@@ -108,14 +109,14 @@ form.form {
         border-left-color: transparent;
 
         &:first-child {
-          border-bottom-left-radius: 3px;
-          border-top-left-radius: 3px;
+          border-bottom-left-radius: 2px;
+          border-top-left-radius: 2px;
           border-left-color: $grey-lighter;
         }
 
         &:last-child {
-          border-bottom-right-radius: 3px;
-          border-top-right-radius: 3px;
+          border-bottom-right-radius: 2px;
+          border-top-right-radius: 2px;
           border-right-color: $grey-lighter;
         }
       }
@@ -138,7 +139,7 @@ form.form {
     input, textarea {
       font-size: $size-5;
       background: white;
-      border-radius: 3px;
+      border-radius: 2px;
       padding: 10px 15px;
       transition: .2s all ease;
       border: 1px solid $grey-lighter;
