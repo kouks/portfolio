@@ -14,8 +14,10 @@
         </headline-links>
 
         <headline-actions>
-          <router-link class="action is-primary" to="/resume">Résumé</router-link>
-          <router-link class="action is-secondary" to="/contact">Contact</router-link>
+          <nav class="action-group">
+            <router-link class="action is-primary" to="/resume">Résumé</router-link>
+            <router-link class="action is-secondary" to="/contact">Contact</router-link>
+          </nav>
         </headline-actions>
       </headline>
     </section>

@@ -1,10 +1,10 @@
 <template>
   <div :class="['column', featuredWidth]">
-    <article :class="['project', featuredClass]" :style="{ backgroundColor: project.color }">
+    <article class="project" :style="{ backgroundColor: project.color }">
       <div class="project-thumbnail">
-        <div class="img">
-          <img :src="project.picture" :alt="project.name">
-        </div>
+        <figure class="image is-16by9">
+          <img src="" :alt="project.name" v-lazy-load="project.picture">
+        </figure>
       </div>
 
       <div class="project-description has-text-centered has-text-light">
@@ -27,10 +27,6 @@ export default {
   computed: {
     featuredWidth () {
       return this.project.featured ? 'is-12' : 'is-6'
-    },
-
-    featuredClass () {
-      return this.project.featured ? 'is-featured' : ''
     }
   }
 }

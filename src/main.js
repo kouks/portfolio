@@ -6,6 +6,9 @@ import Router from 'vue-router'
 // Requiring global helper functions.
 require('./helpers')
 
+// Requiring custom Vue Directives
+require('./directives')
+
 Vue.use(Router)
 
 export default new Vue({

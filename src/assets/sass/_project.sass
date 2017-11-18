@@ -1,0 +1,32 @@
+
+/**
+ * Project box styles.
+ *
+ * Available for: <article>
+ *
+ * .project
+ *   .project-thumbnail
+ *   .project-description
+ *     .project-description-text
+ */
+
+article.project
+  height: 100%
+  overflow: hidden
+  position: relative
+  transition: .5s all ease
+
+  .project-thumbnail
+    padding: 10% 10% 0
+
+    .image
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .5)
+      line-height: 0
+
+  &:hover
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .5)
+    z-index: 100
+
+  .project-description
+    width: 100%
+    padding: 35px
