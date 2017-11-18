@@ -14,10 +14,10 @@
         </headline-links>
 
         <headline-actions>
-          <router-link class="action is-secondary has-icon" to="/">
+          <router-link class="action is-default has-icon" to="/">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
           </router-link>
-          <a href="mailto:kouks.koch@gmail.com" class="action is-primary">Email Me</a>
+          <a href="mailto:kouks.koch@gmail.com" class="action is-secondary">Email Me</a>
         </headline-actions>
       </headline>
     </section>
@@ -54,7 +54,7 @@
               </div>
 
               <div class="form-field">
-                <button type="button" class="action is-primary is-fullwidth is-disabled">
+                <button type="button" class="action is-fullwidth is-disabled">
                   Send
                 </button>
               </div>
