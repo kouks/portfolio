@@ -14,10 +14,13 @@
         </headline-links>
 
         <headline-actions>
-          <router-link class="action is-default has-icon" to="/">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-          </router-link>
-          <a href="mailto:kouks.koch@gmail.com" class="action is-secondary">Email Me</a>
+          <nav class="action-group">
+            <router-link class="action is-default has-icon" to="/">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </router-link>
+
+            <a href="mailto:kouks.koch@gmail.com" class="action is-secondary">Email Me</a>
+          </nav>
         </headline-actions>
       </headline>
     </section>

@@ -14,15 +14,17 @@
         </headline-links>
 
         <headline-actions>
-          <router-link class="action is-default has-icon" to="/">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-          </router-link>
+          <nav class="action-group">
+            <router-link class="action is-default has-icon" to="/">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </router-link>
 
-          <a
-            href="https://pavelkoch.io/files/Pavel-Koch-Resume-2017.pdf"
-            target="_blank"
-            class="action is-primary"
-          >Download</a>
+            <a
+              href="https://pavelkoch.io/files/Pavel-Koch-Resume-2017.pdf"
+              target="_blank"
+              class="action is-primary"
+            >Download</a>
+          </nav>
         </headline-actions>
       </headline>
     </section>
