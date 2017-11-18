@@ -1,4 +1,5 @@
 const Uglify = require('uglifyjs-webpack-plugin')
+const Compression = require('compression-webpack-plugin')
 
 function basePath (dir) {
   return require('path').join(__dirname, dir)
@@ -12,7 +13,10 @@ module.exports = {
     filename: 'build.js'
   },
   plugins: [
-    new Uglify()
+    new Uglify(),
+    new Compression({
+      algorithm: 'gzip'
+    })
   ],
   resolve: {
     extensions: ['.js', '.vue'],
