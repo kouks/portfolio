@@ -30,12 +30,17 @@ a.action, button.action {
   padding: 15px 35px;
   transition: .2s all ease;
 
-  &.has-icon {
-    padding: 13.75px 21.5px;
-  }
-
   &:not(:last-child) {
     margin-right: 30px;
+  }
+
+  @media screen and (max-width: 769px) {
+    display: block;
+    margin: 10px 0 !important;
+  }
+
+  &.has-icon {
+    padding: 13.75px 21.5px;
   }
 
   &.is-fullwidth {
