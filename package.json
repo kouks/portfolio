@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "node build/dev.js",
     "build": "node build/prod.js",
-    "test": "node build/test.js'"
+    "test": "node build/test.js"
   },
   "author": "Pavel Koch <kouks.koch@gmail.com>",
   "license": "MIT",
