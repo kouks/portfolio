@@ -4,9 +4,9 @@
   "description": "Pavel Koch Personal Portfolio",
   "main": "src/main.js",
   "scripts": {
-    "watch": "cross-env NODE_ENV=development webpack-dev-server --open --hot --history-api-fallback",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "test": "echo 'tests'"
+    "watch": "node build/dev.js",
+    "build": "node build/prod.js",
+    "test": "node build/test.js"
   },
   "author": "Pavel Koch <kouks.koch@gmail.com>",
   "license": "MIT",
@@ -32,7 +32,8 @@
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.5",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "bulma": "^0.6.1"

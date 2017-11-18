@@ -1,7 +1,7 @@
 <template>
-  <header class="container has-text-centered headline">
+  <div class="headline container has-text-centered">
     <slot />
-  </header>
+  </div>
 </template>
 
 <script>
