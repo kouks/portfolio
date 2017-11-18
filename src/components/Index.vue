@@ -1,26 +1,28 @@
 <template>
   <div>
-    <section class="section is-large">
-      <headline>
-        <headline-title>
-          <h1 class="title is-2">Hi.</h1>
-          <span class="subtitle is-4">
-            Name's Pavel. I'm an enthusiastic programmer, amateur chess player and a gym freak.
-          </span>
-        </headline-title>
+    <header class="hero is-fullheight">
+      <div class="hero-body">
+        <headline>
+          <headline-title>
+            <h1 class="title is-2">Hi.</h1>
+            <span class="subtitle is-4">
+              Name's Pavel. I'm an enthusiastic programmer, amateur chess player and a gym freak.
+            </span>
+          </headline-title>
 
-        <headline-links>
-          <social-links></social-links>
-        </headline-links>
+          <headline-links>
+            <social-links></social-links>
+          </headline-links>
 
-        <headline-actions>
-          <nav class="action-group">
-            <router-link class="action is-primary" to="/resume">Résumé</router-link>
-            <router-link class="action is-secondary" to="/contact">Contact</router-link>
-          </nav>
-        </headline-actions>
-      </headline>
-    </section>
+          <headline-actions>
+            <nav class="action-group">
+              <router-link class="action is-primary" to="/resume">Résumé</router-link>
+              <router-link class="action is-secondary" to="/contact">Contact</router-link>
+            </nav>
+          </headline-actions>
+        </headline>
+      </div>
+    </header>
 
     <main class="section">
       <div class="container">

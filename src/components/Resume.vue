@@ -1,33 +1,35 @@
 <template>
   <div>
-    <section class="section is-large">
-      <headline>
-        <headline-title>
-          <h1 class="title is-2">The Résumé.</h1>
-          <span class="subtitle is-4">
-            I'm always eager to learn new things and deal with challenges that are put in front of me.
-          </span>
-        </headline-title>
+    <header class="hero is-medium">
+      <div class="hero-body">
+        <headline>
+          <headline-title>
+            <h1 class="title is-2">The Résumé.</h1>
+            <span class="subtitle is-4">
+              I'm always eager to learn new things and deal with challenges that are put in front of me.
+            </span>
+          </headline-title>
 
-        <headline-links>
-          <social-links></social-links>
-        </headline-links>
+          <headline-links>
+            <social-links></social-links>
+          </headline-links>
 
-        <headline-actions>
-          <nav class="action-group">
-            <router-link class="action is-default has-icon" to="/">
-              <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </router-link>
+          <headline-actions>
+            <nav class="action-group">
+              <router-link class="action is-default has-icon" to="/">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </router-link>
 
-            <a
-              href="https://pavelkoch.io/files/Pavel-Koch-Resume-2017.pdf"
-              target="_blank"
-              class="action is-primary"
-            >Download</a>
-          </nav>
-        </headline-actions>
-      </headline>
-    </section>
+              <a
+                href="https://pavelkoch.io/files/Pavel-Koch-Resume-2017.pdf"
+                target="_blank"
+                class="action is-primary"
+              >Download</a>
+            </nav>
+          </headline-actions>
+        </headline>
+      </div>
+    </header>
 
     <main class="section">
       <div class="container">

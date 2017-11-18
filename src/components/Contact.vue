@@ -1,29 +1,31 @@
 <template>
   <div>
-    <section class="section is-large">
-      <headline>
-        <headline-title>
-          <h1 class="title is-2">Say Hello.</h1>
-          <span class="subtitle is-4">
-            Feel free to ask me anything you want. Be it a new project proposal or a friendly chit-chat.
-          </span>
-        </headline-title>
+    <header class="hero is-medium">
+      <div class="hero-body">
+        <headline>
+          <headline-title>
+            <h1 class="title is-2">Say Hello.</h1>
+            <span class="subtitle is-4">
+              Feel free to ask me anything you want. Be it a new project proposal or a friendly chit-chat.
+            </span>
+          </headline-title>
 
-        <headline-links>
-          <social-links></social-links>
-        </headline-links>
+          <headline-links>
+            <social-links></social-links>
+          </headline-links>
 
-        <headline-actions>
-          <nav class="action-group">
-            <router-link class="action is-default has-icon" to="/">
-              <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </router-link>
+          <headline-actions>
+            <nav class="action-group">
+              <router-link class="action is-default has-icon" to="/">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </router-link>
 
-            <a href="mailto:kouks.koch@gmail.com" class="action is-secondary">Email Me</a>
-          </nav>
-        </headline-actions>
-      </headline>
-    </section>
+              <a href="mailto:kouks.koch@gmail.com" class="action is-secondary">Email Me</a>
+            </nav>
+          </headline-actions>
+        </headline>
+      </div>
+    </header>
 
     <main class="section">
       <div class="container">
