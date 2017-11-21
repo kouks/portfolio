@@ -43,7 +43,6 @@
                     placeholder="Email"
                     type="text"
                     v-model="form.email"
-                    disabled
                   >
                 </div>
 
@@ -57,7 +56,6 @@
                   :class="[ messageValid ? '' : 'has-errors']"
                   placeholder="Message"
                   v-model="form.message"
-                  disabled
                 ></textarea>
 
                 <span v-show="!messageValid" class="form-message has-text-danger">
@@ -66,12 +64,16 @@
               </div>
 
               <div class="form-field">
-                <button type="button" class="action is-fullwidth is-disabled">
+                <button type="submit" class="action is-fullwidth is-secondary">
                   Send
                 </button>
 
                 <span v-show="sent" class="form-message has-text-success">
                   <i class="fa fa-check" aria-hidden="true"></i> The message has been sent.
+                </span>
+
+                <span v-show="failed" class="form-message has-text-danger">
+                  <i class="fa fa-warning" aria-hidden="true"></i> Something went horribly wrong.
                 </span>
               </div>
             </form>
@@ -128,7 +130,8 @@ export default {
         message: ''
       },
       submitted: false,
-      sent: false
+      sent: false,
+      failed: false
     }
   },
 
@@ -152,9 +155,14 @@ export default {
         .then((response) => {
           this.sent = true
           this.submitted = false
+          this.form = {
+            email: '',
+            message: ''
+          }
         })
         .catch((response) => {
-          console.log(response)
+          this.submitted = false
+          this.failed = true
         })
     }
   }
