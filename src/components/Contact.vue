@@ -154,6 +154,7 @@ export default {
       this.$http.post(`${config.apiUrl}/messages`, this.form)
         .then((response) => {
           this.sent = true
+          this.failed = false
           this.submitted = false
           this.form = {
             email: '',
@@ -163,6 +164,7 @@ export default {
         .catch((response) => {
           this.submitted = false
           this.failed = true
+          this.sent = false
         })
     }
   }
