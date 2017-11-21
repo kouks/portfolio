@@ -19,6 +19,7 @@ a.action, button.action
   border-radius: 2px
   border: 1px solid transparent
   color: $grey
+  cursor: pointer
   font-size: $size-5
   line-height: $size-5
   outline: none
@@ -59,7 +60,9 @@ a.action, button.action
     color: $light
 
   &.is-secondary, &.is-primary, &.is-default
-    &:hover, &:focus
+    &:hover
+      box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.55)
+    &:active
       box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
 
 /**

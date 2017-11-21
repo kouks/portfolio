@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "node build/dev.js",
     "build": "node build/prod.js",
-    "test": "node build/test.js"
+    "test": "mocha-webpack --webpack-config webpack.config.js --recursive tests/**/*.spec.js --require tests/setup",
+    "prod": "npm run test && npm run build"
   },
   "author": "Pavel Koch <kouks.koch@gmail.com>",
   "license": "MIT",
@@ -14,15 +15,22 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
+    "chai": "^4.1.2",
     "compression-webpack-plugin": "^1.0.1",
-    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
+    "env": "0.0.2",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.2.2",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "jsdom": "^11.3.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^4.0.1",
+    "mocha-webpack": "^1.0.1",
     "node-sass": "^4.7.1",
     "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^1.0.1",
@@ -36,6 +44,8 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
-    "bulma": "^0.6.1"
+    "axios": "^0.17.1",
+    "bulma": "^0.6.1",
+    "vue-axios": "^2.0.2"
   }
 }
