@@ -1,4 +1,4 @@
 
 export default {
-  apiUrl: 'api.dev:8000'
+  apiUrl: 'http://api.pavelkoch.io'
 }
