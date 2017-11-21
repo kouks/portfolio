@@ -43,6 +43,7 @@
                     placeholder="Email"
                     type="text"
                     v-model="form.email"
+                    disabled
                   >
                 </div>
 
@@ -56,6 +57,7 @@
                   :class="[ messageValid ? '' : 'has-errors']"
                   placeholder="Message"
                   v-model="form.message"
+                  disabled
                 ></textarea>
 
                 <span v-show="!messageValid" class="form-message has-text-danger">
@@ -64,7 +66,7 @@
               </div>
 
               <div class="form-field">
-                <button type="submit" class="action is-fullwidth is-secondary">
+                <button type="button" class="action is-fullwidth is-disabled">
                   Send
                 </button>
 
