@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App'
+import axios from 'axios'
 import routes from './routes'
 import Router from 'vue-router'
+import VueAxios from 'vue-axios'
 
 // Requiring global helper functions.
 require('./helpers')
@@ -10,6 +12,7 @@ require('./helpers')
 require('./directives')
 
 Vue.use(Router)
+Vue.use(VueAxios, axios)
 
 export default new Vue({
   components: { App },

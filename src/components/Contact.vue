@@ -31,37 +31,46 @@
       <div class="container">
         <div class="columns">
           <div class="column is-5">
-            <form class="form">
+            <form class="form" @submit.prevent="submitted = true; sendMessage()">
               <div class="form-field">
                 <div class="form-field has-addons">
                   <span class="form-addon">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </span>
-                  <input :class="[ true ? '' : 'has-errors']" type="text" v-model="form.email" disabled>
+
+                  <input
+                    :class="[ emailValid ? '' : 'has-errors']"
+                    placeholder="Email"
+                    type="text"
+                    v-model="form.email"
+                  >
                 </div>
 
-                <span v-show="false" class="form-message has-text-danger">
+                <span v-show="!emailValid" class="form-message has-text-danger">
                   <i class="fa fa-warning" aria-hidden="true"></i> Your email seems to be invalid
                 </span>
               </div>
 
               <div class="form-field">
                 <textarea
-                  :class="[ true ? '' : 'has-errors']"
-                  v-model="form.message"
+                  :class="[ messageValid ? '' : 'has-errors']"
                   placeholder="Message"
-                  disabled
+                  v-model="form.message"
                 ></textarea>
 
-                <span v-show="false" class="form-message has-text-danger">
+                <span v-show="!messageValid" class="form-message has-text-danger">
                   <i class="fa fa-warning" aria-hidden="true"></i> The message needs to be at least 10 characters long
                 </span>
               </div>
 
               <div class="form-field">
-                <button type="button" class="action is-fullwidth is-disabled">
+                <button type="submit" class="action is-fullwidth is-secondary">
                   Send
                 </button>
+
+                <span v-show="sent" class="form-message has-text-success">
+                  <i class="fa fa-check" aria-hidden="true"></i> The message has been sent.
+                </span>
               </div>
             </form>
           </div>
@@ -94,6 +103,7 @@
 </template>
 
 <script>
+import config from 'config'
 import Headline from '@/components/elements/Headline'
 import SocialLinks from '@/components/partials/Social'
 import HeadlineTitle from '@/components/elements/HeadlineTitle'
@@ -111,13 +121,39 @@ export default {
 
   data () {
     return {
-      form: {}
+      form: {
+        email: '',
+        message: ''
+      },
+      submitted: false,
+      sent: false
     }
   },
 
   computed: {
     emailValid () {
-      return this.form.email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)
+      return !this.submitted || this.form.email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)
+    },
+
+    messageValid () {
+      return !this.submitted || this.form.message.length > 10
+    }
+  },
+
+  methods: {
+    sendMessage () {
+      if (!this.messageValid || !this.emailValid) {
+        return
+      }
+
+      this.$http.post(`${config.apiUrl}/messages`, this.form)
+        .then((response) => {
+          this.sent = true
+          this.submitted = false
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   }
 }
