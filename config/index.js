@@ -1,4 +1,4 @@
 
 export default {
-  apiUrl: 'http://api.pavelkoch.io'
+  apiUrl: 'https://api.pavelkoch.io'
 }

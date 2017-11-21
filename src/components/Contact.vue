@@ -6,7 +6,7 @@
           <headline-title>
             <h1 class="title is-2">Say Hello.</h1>
             <span class="subtitle is-4">
-              Feel free to ask me anything you want. Be it a new project proposal or a friendly chit-chat.
+              Feel free to tell me anything that's on your mind, be it a new project proposal, job offer or a friendly chit-chat.
             </span>
           </headline-title>
 
@@ -71,6 +71,10 @@
                 <span v-show="sent" class="form-message has-text-success">
                   <i class="fa fa-check" aria-hidden="true"></i> The message has been sent.
                 </span>
+
+                <span v-show="failed" class="form-message has-text-danger">
+                  <i class="fa fa-warning" aria-hidden="true"></i> Something went horribly wrong.
+                </span>
               </div>
             </form>
           </div>
@@ -126,7 +130,8 @@ export default {
         message: ''
       },
       submitted: false,
-      sent: false
+      sent: false,
+      failed: false
     }
   },
 
@@ -150,9 +155,14 @@ export default {
         .then((response) => {
           this.sent = true
           this.submitted = false
+          this.form = {
+            email: '',
+            message: ''
+          }
         })
         .catch((response) => {
-          console.log(response)
+          this.submitted = false
+          this.failed = true
         })
     }
   }
