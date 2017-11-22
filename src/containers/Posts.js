@@ -39,6 +39,7 @@ sudo: false
 
 install:
 - travis_retry composer install
+- travis_retry npm install
 
 before_script:
 - mkdir -p storage/framework/{cache,views,sessions}
@@ -50,7 +51,8 @@ before_script:
 - php artisan clear-compiled
 
 script:
-- ./vendor/bin/phpunit</pre>
+- ./vendor/bin/phpunit
+- npm run prod</pre>
 <h2>Deploying the Application</h2>
 <p>Now let's move on to the fun part. In summary, we will need to go through four simple steps.</p>
 <ol>
@@ -90,6 +92,7 @@ before_install:
 
 install:
 - travis_retry composer install
+- travis_retry npm install
 
 before_script:
 - mkdir -p storage/framework/{cache,views,sessions}
@@ -101,7 +104,8 @@ before_script:
 - php artisan clear-compiled
 
 script:
-- ./vendor/bin/phpunit</pre>
+- ./vendor/bin/phpunit
+- npm run prod</pre>
 
 <blockquote>
   We also <strong>have to</strong> add the <code>chmod 700 deploy_rsa</code> command to change access rights to the key, for the build would fail otherwise.
@@ -117,8 +121,8 @@ script:
   The highlighted part works differently for everyone, depending on what Travis environment you use. If it fails, try replacing it with <code>bash deploy.sh</code>, <code>./deploy.sh</code> or simply <code>deploy.sh</code>.
 </blockquote>
 <p>As you might have assumed, the next step is to write the actual script. I will provide a default example. This part is however highly customisable, based on what actions you want to perform after deploying. Create a <code>deploy.sh</code> file in your project root.</p>
-<pre>rsync --exclude vendor --exclude .env -r -e "ssh -i deploy_rsa -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/. user@host:/var/www/html
-ssh -i deploy_rsa -o 'StrictHostKeyChecking no' user@host "cd /var/www/html && composer install"</pre>
+<pre>rsync --exclude vendor --exclude .env --exclude node_modules -r -e "ssh -i deploy_rsa -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/. user@host:/var/www/html
+ssh -i deploy_rsa -o 'StrictHostKeyChecking no' user@host "cd /var/www/html && composer install && npm install && npm run prod"</pre>
 <blockquote>
   The <code>-o 'StrictHostKeyChecking no'</code> part is important, for Travis would get stuck checking the host while building, awaiting user input. I also use <code>/var/www/hmtl</code> as a root of the project, might be diffrerent for you. Don't forget to replace <code>user@host</code> with the correct data either.
 </blockquote>
