@@ -1,3 +1,4 @@
+import Post from '@/components/Post'
 import Index from '@/components/Index'
 import Resume from '@/components/Resume'
 import Contact from '@/components/Contact'
@@ -18,6 +19,11 @@ export default [
     path: '/contact',
     component: Contact,
     name: 'contact'
+  },
+  {
+    path: '/blog/:post',
+    component: Post,
+    name: 'post'
   },
   {
     path: '/*',
