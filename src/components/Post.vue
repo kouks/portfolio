@@ -16,7 +16,7 @@
 
           <headline-actions>
             <nav class="action-group">
-              <button class="action is-disabled has-icon has-fixed-length" to="/">
+              <button class="action is-disabled has-icon has-fixed-width" to="/">
                 <i class="fa fa-angle-left" aria-hidden="true"></i> Previous
               </button>
 
@@ -24,7 +24,7 @@
                 <i class="fa fa-home" aria-hidden="true"></i>
               </router-link>
 
-              <button class="action is-disabled has-icon has-fixed-length" to="/">
+              <button class="action is-disabled has-icon has-fixed-width" to="/">
                 Next <i class="fa fa-angle-right" aria-hidden="true"></i>
               </button>
             </nav>
