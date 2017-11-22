@@ -40,6 +40,28 @@
       </div>
     </main>
 
+    <section id="blog" class="section is-large">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-12 has-text-centered">
+            <h2 class="title is-2">My Writings</h2>
+            <span class="subtitle is-4">
+              AKA some desperate attemps to write a blog.
+            </span>
+          </div>
+        </div>
+
+        <div class="columns is-multiline">
+          <post
+            :key="slug"
+            :post="post"
+            :slug="slug"
+            v-for="(post, slug) in posts"
+          ></post>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
@@ -53,7 +75,9 @@
 </template>
 
 <script>
+import Posts from '@/containers/Posts'
 import Projects from '@/containers/Projects'
+import Post from '@/components/elements/Post'
 import Project from '@/components/elements/Project'
 import Headline from '@/components/elements/Headline'
 import SocialLinks from '@/components/partials/Social'
@@ -63,6 +87,7 @@ import HeadlineActions from '@/components/elements/HeadlineActions'
 
 export default {
   components: {
+    Post,
     Project,
     Headline,
     SocialLinks,
@@ -73,6 +98,7 @@ export default {
 
   data () {
     return {
+      posts: Posts,
       projects: Projects
     }
   }

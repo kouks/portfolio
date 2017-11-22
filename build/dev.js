@@ -21,6 +21,7 @@ const compiler = webpack(merge(config, {
 const server = new Server(compiler, {
   publicPath: '/dist/',
   filename: 'build.js',
+  historyApiFallback: true,
   hot: true,
   stats: { colors: true, cache: true },
   quiet: true

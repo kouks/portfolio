@@ -14,9 +14,16 @@ require('./directives')
 Vue.use(Router)
 Vue.use(VueAxios, axios)
 
+const router = new Router({ routes, mode: 'history' })
+
+router.beforeEach((to, from, next) => {
+  window.scrollToTop()
+  next()
+})
+
 export default new Vue({
   components: { App },
   el: '#app',
-  router: new Router({ routes, mode: 'history' }),
+  router: router,
   template: '<App />'
 })

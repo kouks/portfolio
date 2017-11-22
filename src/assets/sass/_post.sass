@@ -1,0 +1,34 @@
+
+/**
+ * Post box styles
+ *
+ * Available for: <article>
+ *
+ * .post
+ *   .post-title
+ *   .post-subtitle
+ *   .post-tags
+ *     .post-tag
+ */
+
+article.post
+  padding: 20px
+  border-radius: $radius-small
+
+  .post-title
+    transition: .5s all ease
+
+    &:hover
+      color: $secondary
+      cursor: pointer
+
+  .post-tags
+    .post-tag
+      color: $secondary
+      display: inline-block
+      margin-right: 4px
+      transition: .5s all ease
+      cursor: pointer
+
+      &:hover
+        color: $grey-darker
