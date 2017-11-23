@@ -165,8 +165,8 @@ vim example.com</pre>
     }
 
     location ~ \\.php$ {
-      include snippets/fastcgi-php.conf;
-      fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
     }
 }</pre>
 <blockquote>
