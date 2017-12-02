@@ -114,6 +114,7 @@ script:
 <p>To tell Travis we want to use a deploy script we need to amend our configration file one last time. Add following lines to the end of your <code>.travis.yml</code>:</p>
 <pre>deploy:
 - provider: script
+  skip_cleanup: true
   script: <strong>/bin/bash deploy.sh</strong>
   on:
     branch: master</pre>
