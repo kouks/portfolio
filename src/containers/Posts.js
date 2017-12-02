@@ -144,6 +144,8 @@ DB_CONNECTION=mysql
 <blockquote>
   Don't forget to run <code>php artisan key:generate</code> to generate a fresh key when setting up the application for the first time.
 </blockquote>
+<p>Last thing that we need to do here is to change persmission for certain folders so Laravel can write to them. Use the following command:</p>
+<pre>chmod -R 777 storage bootstrap/cache</pre>
 <h3>Setting up Nginx Site</h3>
 <p>One last thing to do before we are done is to add a virtual host to our webserver. We do so by creating a file in Nginx's <code>sites-available</code> folder.</p>
 <pre>cd /etc/nginx/sites-available
