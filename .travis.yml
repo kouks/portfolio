@@ -19,3 +19,7 @@ deploy:
   script: rsync -r -e "ssh -i deploy_rsa -o 'StrictHostKeyChecking no'" $TRAVIS_BUILD_DIR/dist $TRAVIS_BUILD_DIR/index.html root@46.101.45.168:/var/www/html
   on:
     branch: master
+
+notifications:
+  email: false
+  slack: scripty-bois:zrQeg3FNpUvdJ9Jh3ZxuPo4Y
