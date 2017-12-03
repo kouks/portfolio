@@ -1,5 +1,21 @@
 export default [
   {
+    name: 'Eoin, the Slack Bot',
+    description: 'Real Time Messaging framework built in Java.',
+    color: '#2196F3',
+    picture: 'https://pavelkoch.io/img/eoin.png',
+    git: 'https://github.com/kouks/eoin-slack-bot',
+    featured: false
+  },
+  {
+    name: 'Ideasheet',
+    description: 'User-friendly online tool for storing ideas.',
+    color: '#673AB7',
+    picture: 'https://pavelkoch.io/img/ideasheet.png',
+    git: 'https://github.com/kouks/ideasheet',
+    featured: false
+  },
+  {
     name: 'Shape Log',
     description: 'Tool for monitoring your gym progress, Vue.js frontend.',
     color: '#b23432',
