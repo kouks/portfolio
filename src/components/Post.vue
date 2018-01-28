@@ -16,17 +16,23 @@
 
           <headline-actions>
             <nav class="action-group">
-              <button class="action is-disabled has-icon has-fixed-width" to="/">
+              <router-link
+                :class="['action', post.previous ? 'is-secondary' : 'is-disabled', 'has-icon', 'has-fixed-width']"
+                :to="post.previous ? `/blog/${post.previous}` : ''"
+              >
                 <i class="fa fa-angle-left" aria-hidden="true"></i> Previous
-              </button>
+              </router-link>
 
               <router-link class="action is-default has-icon" to="/">
                 <i class="fa fa-home" aria-hidden="true"></i>
               </router-link>
 
-              <button class="action is-disabled has-icon has-fixed-width" to="/">
-                Next <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </button>
+              <router-link
+                :class="['action', post.next ? 'is-secondary' : 'is-disabled', 'has-icon', 'has-fixed-width']"
+                :to="post.next ? `/blog/${post.next}` : ''"
+              >
+                <i class="fa fa-angle-right" aria-hidden="true"></i> Next
+              </router-link>
             </nav>
           </headline-actions>
         </headline>

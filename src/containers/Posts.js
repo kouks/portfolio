@@ -1,7 +1,24 @@
 export default {
+  'java-adventures-eoin': {
+    title: 'Java adventures—Eoin',
+    subtitle: 'My struggles when building the RTM Slack Bot framework, which I call Eoin.',
+    previous: 'deploying-laravel-application',
+    next: null,
+    content: `
+<h2>Introduction</h2>
+<h2>First Steps</h2>
+<h2>Annotations & Reflections</h2>
+<h2>The Framework</h2>
+    `,
+    tags: [
+      '#java', '#slack', '#bot', '#rtm'
+    ]
+  },
   'deploying-laravel-application': {
     title: 'Deploying Laravel Application',
     subtitle: 'How to deploy a Laravel application onto your production server using Git and Travis.',
+    previous: null,
+    next: 'java-adventures-eoin',
     content: `
 <h2>Prerequisites</h2>
 <ul>

@@ -40,13 +40,13 @@
       </div>
     </main>
 
-    <section id="blog" class="section is-large">
+<!--     <section id="blog" class="section is-large">
       <div class="container">
         <div class="columns">
           <div class="column is-12 has-text-centered">
             <h2 class="title is-2">My Writings</h2>
             <span class="subtitle is-4">
-              AKA some desperate attemps to write a blog.
+              Or something that remotely resembles it.
             </span>
           </div>
         </div>
@@ -60,7 +60,7 @@
           ></post>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer class="footer">
       <div class="container">
