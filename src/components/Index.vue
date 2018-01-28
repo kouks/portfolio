@@ -4,10 +4,10 @@
       <div class="hero-body">
         <headline>
           <headline-title>
-            <h1 class="title is-2">Hi.</h1>
-            <span class="subtitle is-4">
+            <h1 class="title is-2 is-spaced">Hi.</h1>
+            <h2 class="subtitle is-4">
               Name's Pavel. I'm an enthusiastic programmer, amateur chess player and a gym freak.
-            </span>
+            </h2>
           </headline-title>
 
           <headline-links>

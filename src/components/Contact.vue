@@ -4,10 +4,10 @@
       <div class="hero-body">
         <headline>
           <headline-title>
-            <h1 class="title is-2">Say Hello.</h1>
-            <span class="subtitle is-4">
+            <h1 class="title is-2 is-spaced">Say Hello.</h1>
+            <h2 class="subtitle is-4">
               Feel free to tell me anything that's on your mind, be it a new project proposal, job offer or a friendly chit-chat.
-            </span>
+            </h2>
           </headline-title>
 
           <headline-links>
